@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
 use Illuminate\Http\Request;
@@ -35,4 +36,8 @@ Route::middleware(['api'])->prefix('tag')->group(function () {
     Route::get('/{id}', [TagController::class, "show"]);
     Route::get('/delete/{id}', [TagController::class, "destroy"]);
     Route::post('/{id}', [TagController::class, "edit"]);
+});
+
+Route::middleware(['api'])->prefix('advertisement')->group(function () {
+    Route::get('/filter', [AdvertisementController::class, "filter"]);
 });
