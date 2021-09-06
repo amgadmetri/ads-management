@@ -17,6 +17,7 @@ class CreateAdvertisementsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('advertiser_id');
+            $table->enum('type', ['free', 'paid']);
             $table->string('title');
             $table->text('description');
             $table->date('start_date');

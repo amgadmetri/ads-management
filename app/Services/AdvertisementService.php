@@ -18,6 +18,7 @@ class AdvertisementService
     {
         $advertisement              = new Advertisement();
         $advertisement->title       = $createAdvertisementDTO->title;
+        $advertisement->type        = $createAdvertisementDTO->type;
         $advertisement->description = $createAdvertisementDTO->description;
         $advertisement->advertiser  = $createAdvertisementDTO->advertiser;
         $advertisement->start_date  = $createAdvertisementDTO->start_date;

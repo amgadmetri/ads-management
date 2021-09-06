@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\ENUMs\AdvertisementTypeEnum;
 use App\Models\Advertisement;
 use App\Models\Advertiser;
 use App\Models\Category;
@@ -24,8 +25,12 @@ class AdvertisementFactory extends Factory
      */
     public function definition()
     {
+        $types = AdvertisementTypeEnum::getConstantsValues();
+        $type_value = array_rand($types);
+        
         return [
             'title'         => $this->faker->text(20),
+            'type'          => $types[$type_value],
             'description'   => $this->faker->text(150),
             'advertiser_id' => Advertiser::factory(),
             'category_id'   => Category::factory(),
