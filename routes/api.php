@@ -17,10 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
 
 Route::middleware(['api'])->prefix('category')->group(function () {
     Route::get('/', [CategoryController::class, "index"]);
